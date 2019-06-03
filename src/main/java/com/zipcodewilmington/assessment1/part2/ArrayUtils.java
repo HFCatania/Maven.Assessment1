@@ -75,27 +75,28 @@ public class ArrayUtils {
      */
     public static Object getLeastCommon(Object[] objectArray) {
         Arrays.sort(objectArray);
-        int minCount= objectArray.length-1;
-        Object result= -1;
-        int currentCount= 1;
-
-        for (int i = 1; i < objectArray.length; i++){
-            if (objectArray[i] == objectArray[i -1]) {
-                currentCount++;
-            } else {
-                if (currentCount < minCount){
-                    minCount = currentCount;
-                    result = objectArray[i - 1];
+        int minCount = objectArray.length+1, res = -1;
+        int currCount = 1;
+        for (int i = 1; i < objectArray.length; i++) {
+            if (objectArray[i] == objectArray[i - 1])
+                currCount++;
+            else {
+                if (currCount < minCount) {
+                    minCount = currCount;
+                    res = (int) objectArray[i - 1];
                 }
-                currentCount = 1;
-            }
-            if (currentCount < minCount){
-                minCount = currentCount;
-                result = objectArray[objectArray.length - 1];
+                currCount = 1;
             }
         }
-        return result;
+        if (currCount < minCount)
+        {
+            minCount = currCount;
+            res = (int) objectArray[objectArray.length - 1];
+        }
+
+        return res;
     }
+
 
     /**
      * @param objectArray      an array of any type of Object
