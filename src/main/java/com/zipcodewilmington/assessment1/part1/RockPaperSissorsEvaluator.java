@@ -47,9 +47,19 @@ public class RockPaperSissorsEvaluator {
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
         String result = "";
-        if(handSignOfPlayer1 == PAPER && handSignOfPlayer2 == ROCK){
-            result = ""; 
+        if(handSignOfPlayer1 == "rock" && handSignOfPlayer2 == "paper"){
+            result = "paper";
+        } else if (handSignOfPlayer1 == "paper" && handSignOfPlayer2 == "scissor"){
+            result = "scissor";
+        } else if (handSignOfPlayer1 == "scissor" && handSignOfPlayer2 == "rock"){
+            result = "rock";
+        } else if (handSignOfPlayer1 == "paper" && handSignOfPlayer2 == "rock"){
+            result = "paper";
+        } else if(handSignOfPlayer1 == "rock" && handSignOfPlayer2 == "scissor"){
+            result = "rock";
+        } else if (handSignOfPlayer1 == "scissor" && handSignOfPlayer2 == "paper"){
+            result = "scissor";
         }
-        return null;
+        return result;
     }
 }

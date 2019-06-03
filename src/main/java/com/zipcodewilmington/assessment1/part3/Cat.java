@@ -16,7 +16,7 @@ public class Cat extends Pet {
      * @param age age of this Cat
      */
     public Cat(Integer age) {
-
+        age = this.getAge();
 
 
     }
@@ -25,6 +25,7 @@ public class Cat extends Pet {
      * @param name name of this Cat
      */
     public Cat(String name) {
+        
 
     }
 
